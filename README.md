@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mymusic-demo
 
 ## Project setup
@@ -22,3 +23,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# music_demo
+front end use Vue establish my own music_demo
+>>>>>>> 7ba3e803e36070d915720299bbc315c82bfec8f1
