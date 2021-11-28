@@ -7,13 +7,16 @@ import router from '@/router'
 Vue.config.productionTip = false
 
 // 引入 与组成 Tabbar相关组件
-import { Tabbar, TabbarItem,NavBar,Col, Row, Image as VanImage} from 'vant';
+import { Tabbar, TabbarItem,NavBar,Col, Row, Image as VanImage,Cell,Icon,Search} from 'vant';
 Vue.use(Col);
 Vue.use(Row);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(NavBar)
 Vue.use(VanImage)
+Vue.use(Cell)
+Vue.use(Icon)
+Vue.use(Search)
 
 // 测试封装的api方法
 
