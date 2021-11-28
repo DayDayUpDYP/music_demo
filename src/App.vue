@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 一级路由 显示地方 -->
-    <router-view></router-view>
+
     <van-nav-bar
       :title="activateTitle"
     />
@@ -13,6 +13,7 @@
         >标签</van-tabbar-item
       >
     </van-tabbar>
+        <router-view></router-view>
   </div>
 </template>
 

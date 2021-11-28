@@ -1,27 +1,45 @@
 <template>
   <div>
-    <van-search shape="round" v-model="value" placeholder="请输入搜索关键词">
-      <!-- 搜索容器 -->
-      <div class="search_wrap">
-        <!-- 标题 -->
-        <p class="hot_title">热门搜索</p>
-        <div class="hot_name_warp">
-          <!-- 热搜关键词容器 -->
-          <span class="hot_item">海底</span>
-        </div>
+    <van-search shape="round" v-model="value" placeholder="请输入搜索关键词" />
+
+    <!-- 搜索容器 -->
+
+    <div class="search_wrap">
+      <!-- 标题 -->
+      <p class="hot_title">热门搜索</p>
+      <div class="hot_name_warp">
+        <!-- 热搜关键词容器 -->
+        <span class="hot_item" 
+        v-for="(obj, index) in hotArr" 
+        :key="index"
+        @click="fn(obj.first)">
+          {{obj.first}}</span>
+
       </div>
-    </van-search>
+    </div>
   </div>
 </template>
 
 <script>
 // 目标 铺设 热搜关键字
+import { hotSearchAPI } from "../../api";
 export default {
-  data(){
-    return{
-      value:''
-    }
-  }
+  data() {
+    return {
+      value: "",
+      hotArr: [], // 热搜关键字
+    };
+  },
+  methods:{
+    fn(val){
+      this.value = val // 吧选中的关键词 显示到搜索框
+    } 
+  },
+  async created() {
+    const res = await hotSearchAPI();
+    this.hotArr = res.data.result.hots;
+    console.log(res);
+  },
 };
 </script>
 
